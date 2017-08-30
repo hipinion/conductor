@@ -1,0 +1,59 @@
+{{ define "_partial_header" }}
+<html>
+<head>
+	<title>{{ .MetaTitle }}</title>
+	<link href="/assets/css/conductor.css" rel="stylesheet" type="text/css" />
+	<style>
+
+	.primary {
+		background-color: #{{.Site.PrimaryColor }};
+		color: #{{.Site.PrimaryAccent}}
+	}
+
+	.primary nav ul li a {
+		color: #{{.Site.PrimaryAccent}};
+	}
+
+	a {
+		color: #{{.Site.PrimaryColor}};
+	}
+
+	.conductor-breadcrumbs {
+		margin: 0px;
+		padding: 0px;
+		margin-bottom: 10px;
+	}
+
+	.conductor-breadcrumbs li {
+		list-style: none;
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	</style>
+</head>
+
+<body>
+
+<header class="primary">
+	<h1 style="margin: 0px;font-size:20px; padding: 0px;display: inline-block;">{{ .Site.Name }}</h1>
+	<nav>
+	<ul>
+		<li><a href="/members">Members </a></li>
+		<li><a href="/forums">Forums</a></li>
+		{{ if not .User.Authenticated }}
+		<li><a href="/login">Log In</a></li>
+		<li><a href="/register">Register</a></li>
+		{{ else }}
+		<li><a href="/logout">{{.User.Name}}</a></li>
+		{{ end }}
+	</ul>
+	</nav>
+</header>
+<div class="conductor-container">
+	<ul class="conductor-breadcrumbs">
+	{{ range .Breadcrumbs }}<li>{{if .Link}}<a href="{{.Link}}">{{.Label}}</a>{{ else }}{{.Link}}{{end}}</li>{{ end }}
+	</ul>
+	<h1>{{ .Title }}</h1>
+
+{{ end }}

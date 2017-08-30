@@ -1,0 +1,16 @@
+.conductor {
+	&-form {
+
+		& input[type='text'], & input[type='password'], & input[type='email'], & textarea {
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			font-weight: 100;
+			border: 1px solid #ddd;
+		}
+
+		&-row {
+			padding: 10px;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{{ template "_partial_header" .}}
+
+{{ range .Page.Posts }}
+<div class="conductor-post">
+{{.Text}}
+	<div class="conductor-post-meta">{{.AuthorName}}</div>
+</div>
+{{ end }}
+
+{{ if $.User.Authenticated }}
+
+<form class="conductor-form"  method="POST">
+	<div class="conductor-form-row"><textarea name="text" placeholder="Text"></textarea></div>
+	<div class="conductor-form-row"><input type="submit" class="conductor-button" value="Reply"></div>
+</form>
+{{ end }}

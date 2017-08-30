@@ -1,0 +1,13 @@
+{{ template "_partial_header" .}}
+
+{{ $length := len .Errors }}{{ if gt $length 0 }}
+{{ range .Errors }}<div class="conductor-message error">{{.}}</div>{{ end }}
+{{ end }}
+
+<form class="conductor-form" method="POST">
+
+	<div class="conductor-form-row"><input type="text" required name="user_name" value="" placeholder="Invitation Key" /></div>
+	<div class="conductor-form-row"><input type="submit" class="conductor-button" value="Submit Key" /></div>
+</form>
+
+{{ template "_partial_footer" .}}
