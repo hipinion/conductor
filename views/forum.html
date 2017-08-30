@@ -1,0 +1,8 @@
+{{ template "_partial_header" .}}
+
+{{ if $.User.Authenticated }}<a class="conductor-button conductor-button-fixed" href="/forums/post/{{$.Page.ForumKey}}">Post</a>{{ end }}
+{{ range .Page.Topics }}
+	<div class="conductor-topic"><a class="conductor-topic-title" href="/forums/{{$.Page.ForumKey}}/{{.Key}}">{{.Title}}</a> 
+		<div class="conductor-topic-meta">{{.Author}} <date>{{.CreatedDate}}</date></div>
+	</div>
+{{ end }}

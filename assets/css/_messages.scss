@@ -1,0 +1,11 @@
+.conductor {
+	&-message {
+
+		font-size: 12px;
+		padding: 20px;
+		
+		&.error {
+			background-color: #fee;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+{{ template "_partial_header" .}}
+
+
+{{ range .Page.Forums }}
+	<div class="conductor-forum"><a class="conductor-forum-title" href="/forums/{{.Key}}">{{.Name}}</a>
+	<div class="conductor-forum-meta">{{.Description}}</div>
+	</div>
+{{ end }}

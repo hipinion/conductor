@@ -1,0 +1,6 @@
+config/*.json
+!config/config_example.json
+.sass-cache
+*.css.map
+*.sh
+bin/*
